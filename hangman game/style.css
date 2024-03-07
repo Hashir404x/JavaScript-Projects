@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  margin-top: 30px;
+}
+
+.figure-part {
+  display: none;
+}
+
+#hidden-word {
+  border: 2px solid yellow;
+  width: fit-content;
+  padding: 20px;
+}
+
+.hidden-word-letters {
+  border-bottom: 2px solid white;
+  margin: 0 5px;
+  font-size: 20px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 20px;
+}
+
+.word-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#notification {
+  padding: 10px;
+  background-color: yellow;
+  color: black;
+  position: absolute;
+  right: 60px;
+  top: 50px;
+  display: none;
+}
+
+#play-again {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  /* display: flex;  */
+  display: none;
+}
+
+#play-again p {
+  padding: 20px;
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+
+#play-again button {
+  padding: 10px;
+}
