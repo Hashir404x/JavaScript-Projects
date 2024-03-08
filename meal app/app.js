@@ -22,7 +22,7 @@ const searchMeal = (e) => {
               (meal) => `<div class="meal">
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
           <div class="meal-info" data-mealID="${meal.idMeal}">
-          <h3>${meal.strMeal}</h3>
+          <h3 class="heading">${meal.strMeal}</h3>
           </div>
           </div>`
             )
@@ -33,3 +33,47 @@ const searchMeal = (e) => {
   } else alert("Please enter search keyword")
 }
 submit.addEventListener("submit", searchMeal)
+
+meals.addEventListener("click", (e) => {
+  let mealId = undefined
+  if (e.target.classList.contains("meal-info"))
+    mealId = e.target.getAttribute("data-mealID")
+  else if (e.target.tagName.toLowerCase() === "h3")
+    mealId = e.target.parentElement.getAttribute("data-mealID")
+  if (mealId) getMealData(mealId)
+})
+
+function getMealData(mealId) {
+  fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const meal = data.meals[0]
+      displayMealDetails(meal)
+    })
+}
+
+function displayMealDetails(meal) {
+  const ingredients = []
+  for (let i = 1; i <= 20; i++) {
+    if (meal[`strIngredient${i}`]) {
+      ingredients.push(
+        `${meal[`strIngredient${i}`]} : ${meal[`strMeasure${i}`]}`
+      )
+    } else break
+  }
+  selectedMeal.innerHTML = `<div class="selected-meal-details">
+    <h1>${meal.strMeal}</h1>
+    <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+    <div class="selected-meal-info">
+    ${meal.strCategory ? `<p>${meal.strCategory}</p>` : ""}
+    ${meal.strArea ? `<p>${meal.strArea}</p>` : ""}
+    </div>
+    <div class="selected-meal-instructions">
+    <p>${meal.strInstructions}</p>
+    <h3>Ingredients: </h3>
+    <ul>
+    ${ingredients.map((ing) => `<li>${ing}</li>`).join("")}
+    </ul>
+    </div>
+  </div>`
+}

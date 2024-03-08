@@ -81,3 +81,19 @@ input[type="text"] {
 .meal-info:hover {
   opacity: 1;
 }
+
+.selected-meal-details {
+  margin: 30px;
+  width: 70%;
+}
+
+.selected-meal-details img {
+  width: 300px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.selected-meal-info {
+  margin: 20px;
+  padding: 10px;
+}
