@@ -53,6 +53,7 @@ body {
   bottom: 50px;
   transition: opacity 1s ease-in;
 }
+
 .loader.show {
   opacity: 1;
 }
