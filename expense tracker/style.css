@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background-color: rgb(58, 58, 58);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  border: 2px solid orangered;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 24px;
+}
+#credit-debit-container {
+  display: flex;
+  gap: 70px;
+  font-size: 18px;
+  border-top: 2px solid white;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+#total-balance {
+  color: cyan;
+}
+
+#credit,
+#debit {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#credit {
+  color: greenyellow;
+}
+
+#debit {
+  color: red;
+}
+
+#history-section {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid white;
+  padding-top: 10px;
+}
+
+#history-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#history-container p {
+  font-size: 20px;
+}
+
+.history-div {
+  color: black;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 3px 10px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.history-div.debit {
+  border-right: 8px solid red;
+}
+
+.history-div.credit {
+  border-right: 8px solid green;
+}
+
+.delete-history {
+  background-color: red;
+  position: absolute;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  padding: 3px 7px;
+  display: none;
+  cursor: pointer;
+}
+
+.history-div:hover .delete-history {
+  display: block;
+}
+
+#transaction-container {
+  border-top: 2px solid white;
+  width: 100%;
+  margin-top: 15px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+select {
+  margin: 10px 0;
+  padding: 3px;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"] {
+  margin: 6px;
+  width: 100%;
+  padding: 4px;
+}
+
+button {
+  padding: 4px;
+  margin-top: 10px;
+}

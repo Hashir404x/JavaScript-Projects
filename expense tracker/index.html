@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Expense Tracker App</title>
+  </head>
+  <body>
+    <h2>Expense Tracker App</h2>
+    <div id="main-container">
+      <!-- total balance -->
+      <h3>Account Balance: $<span id="total-balance">0</span></h3>
+      <!-- Credit and debit -->
+      <div id="credit-debit-container">
+        <p>Credit: $<span id="credit">0</span></p>
+        <p>Debit: $<span id="debit">0</span></p>
+      </div>
+      <!-- History -->
+      <div id="history-section">
+        <p>History</p>
+        <div id="history-container"></div>
+      </div>
+      <!-- Add transaction -->
+      <div id="transaction-container">
+        <p>Add transaction</p>
+        <form action="">
+          <select>
+            <option selected value="credit">Credit</option>
+            <option value="debit">Debit</option>
+          </select>
+          <br />
+          <input type="text" placeholder="Name of transaction" />
+          <br />
+          <input type="number" placeholder="Amount" />
+          <button type="submit">Add transation</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
